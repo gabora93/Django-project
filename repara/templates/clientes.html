@@ -1,0 +1,29 @@
+{% extends 'index.html' %}
+
+{% block content %}
+   <h1 class="keon">CLIENTES</h1>
+    <a class="pull-right" href="{% url 'nuevo_cliente' %}" class="top-menu"><i class="fas fa-user-plus fa-3x"></i></a>
+   <table class="table table-hover text-center" style="font-size: 25px;">
+  <tr class="text-center">
+  	<th class="text-center">ID</th>
+    <th class="text-center">Nombre</th>
+    <th class="text-center">Apellido</th> 
+    <th class="text-center">Correo</th>
+    <th class="text-center">Telefono</th>
+  </tr>
+  {% for cliente in clientes %}
+ <tr>
+ 	<a href="{% url 'detalles_cliente' pk=cliente.pk %}">
+    <td>{{cliente.id}}</td>
+    <td><a href="{% url 'detalles_cliente' pk=cliente.pk %}">{{ cliente.nombre }}</a></td>
+    <td>{{cliente.apellido}}</td>
+    <td>{{cliente.correo}}</td>
+    <td>{{cliente.telefono}}</td>
+    <td><a class="btn btn-default" href="{% url 'eliminar_cliente' pk=cliente.pk %}"><span class="glyphicon glyphicon-remove"></span></a>
+</td>
+    </a>
+  </tr>
+  {%endfor%}
+</table>
+
+{% endblock %}

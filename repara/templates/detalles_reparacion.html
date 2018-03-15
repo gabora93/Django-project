@@ -1,0 +1,19 @@
+{% extends 'index.html' %}
+
+{% block content %}
+<a class="btn btn-default pull-right" href="{% url 'editar_reparacion' pk=reparacion.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
+   <h1>Detalles de Reparacion</h1>
+   <h2>Estado: {{ reparacion.estado}}</h2>
+   <hr>  
+   <span><h1>Detalles Cliente</h1></span>
+   <h2>Nombre: {{reparacion.equipo.cliente.nombre}}</h2>
+   <h2>Apellido: {{reparacion.equipo.cliente.apellido}}</h2>
+   <h2>Correo: {{reparacion.equipo.cliente.correo}}</h2>
+   <h2>Telefono: {{reparacion.equipo.cliente.telefono}}</h2>
+   <br>	
+   <h2>Equipos Registrados del cliente</h2>
+   <h3>Modelo: {{reparacion.equipo.modelo}}</h3>
+   <h3>Descripcion: {{reparacion.equipo.descripcion}}</h3>
+
+
+{% endblock %}

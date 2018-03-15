@@ -1,0 +1,24 @@
+{% extends 'index.html' %}
+
+{% block content %}
+   <h1>Equipos de {{cliente.nombre}} </h1>
+    <a class="pull-right" href="{% url 'nuevo_equipo' %}" class="top-menu"><i class="fas fa-user-plus fa-3x"></i></a>
+   <table class="table table-hover text-center">
+  <tr class="text-center" style="font-size: 25px;">
+    <th class="text-center">ID</th>
+    <th class="text-center">Descripcion</th>
+    <th class="text-center">Modelo</th> 
+    <th class="text-center">Cliente</th>
+
+ <tr style="font-size: 25px;">
+  <a href="{% url 'detalles_equipo' pk=equipo.pk %}">
+    <td>{{equipo.id}}</td>
+    <td><a href="{% url 'detalles_equipo' pk=equipo.pk %}">{{ equipo.descripcion }}</a></td>
+    <td>{{equipo.modelo}}</td>
+    <td><a href="{% url 'detalles_cliente' pk=cliente.id %}">{{cliente.nombre}} {{ cliente.apellido}}</a></td>
+    <t</td>
+    </a>
+  </tr>
+</table>
+
+{% endblock %}

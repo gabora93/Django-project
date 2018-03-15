@@ -1,0 +1,10 @@
+{% extends 'index.html' %}
+
+
+    {% block content %}
+        <h1 class="text-primary text-center">{{title}}</h1>
+        <form method="POST" class="form-horizontal jumbotron text-center center-block">{% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="save btn btn-default">Save</button>
+        </form>
+    {% endblock %}

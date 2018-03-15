@@ -1,0 +1,16 @@
+{% extends 'index.html' %}
+
+{% block content %}
+<a class="btn btn-default pull-right" href="{% url 'editar_empleado' pk=empleado.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
+	<h3>ID {{ empleado.id}}</h3>
+   <h1>Detalles del empleado: {{ empleado.nombre}}</h1>
+   <h2>Nombre: {{empleado.nombre}}</h2>
+   <h2>Apellido: {{empleado.apellido}}</h2>
+   <h2>Correo: {{empleado.correo}}</h2>
+   <h2>Telefono: {{empleado.telefono}}</h2>
+
+   <br>	
+  
+
+</table>
+{% endblock %}

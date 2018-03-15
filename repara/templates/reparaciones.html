@@ -1,0 +1,30 @@
+
+{% extends 'index.html' %}
+{% load staticfiles %}
+{% block content %}	
+   <h1 class="keon">Reparaciones en Curso</h1><a href="#" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
+   <a class="pull-right" href="{% url 'nueva_reparacion' %}" class="top-menu"><i class="fas fa-user-plus fa-3x"></i></a>
+   {% for reparacion in reparaciones %}
+  
+  
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-2" style="width: 18rem; margin: 10px; ;font-size: 20px;">
+            <div class="thumbnail" style="background-color: #356892; ">
+                 <img class="card-img-top img-thumbnail" src="{% static 'css/laptop.png' %}" style=": 5px;" alt="Card image cap" style="padding: 20px">
+                <div class="caption" style=" color: white">
+                     <h4 class="">Equipo: {{reparacion.equipo.modelo}}</h4>
+                    <p >Descripcion: {{reparacion.equipo.descripcion}}</p>
+                    <a href="" class="btn btn-default btn-xs pull-right" role="button"><i class="glyphicon glyphicon-edit"></i></a>  
+                    <a href="{% url 'detalles_reparacion' pk=reparacion.pk %}" class="btn btn-warning btn-xs btn-block" role="button">VER</a>
+
+                </div>
+            </div>
+        </div>
+
+ {% endfor %}
+{% endblock %}
+
+
